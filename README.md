@@ -52,8 +52,7 @@ Foco em boas práticas de arquitetura, experiência do desenvolvedor (DX) e qual
 - Interface responsiva, moderna e acessível
 
 <p align="center">
-		<img src="github/ui-list.png" alt="Screenshot da lista de tarefas" width="85%"/>
-		<!-- Salve sua captura de tela (como a enviada) em github/ui-list.png para aparecer aqui. -->
+		<img src="img/image.png" alt="Screenshot da lista de tarefas" width="85%"/>
 </p>
 
 ---
