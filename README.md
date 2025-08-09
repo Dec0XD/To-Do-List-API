@@ -1,6 +1,6 @@
 <!-- Logo e Título -->
 <p align="center">
-	<img src="github/logo.png" alt="To-Do Pro Logo" width="120"/>
+	<!-- <img src="github/logo.png" alt="To-Do Pro Logo" width="120"/> --> 
 	<!-- Substitua por uma imagem em github/logo.png -->
 	<!-- Ou remova a tag img se não quiser usar logo -->
 </p>
@@ -52,7 +52,7 @@ Foco em boas práticas de arquitetura, experiência do desenvolvedor (DX) e qual
 - Interface responsiva, moderna e acessível
 
 <p align="center">
-		<img src="img/image.png" alt="Screenshot da lista de tarefas" width="85%"/>
+		<img src="github/imgs/TelaInicio.png" alt="Screenshot da lista de tarefas" width="85%"/>
 </p>
 
 ---
@@ -126,8 +126,7 @@ Invoke-RestMethod -Method Get -Uri http://localhost:3000/api/tasks -Headers @{ A
 Interface (exemplo):
 
 <p align="center">
-		<img src="github/ui-login.png" alt="Tela de login" width="80%"/>
-		<!-- Opcional: adicione também github/ui-login.png. -->
+		<img src="github/imgs/ui-login.png" alt="Tela de login" width="80%"/>
 </p>
 
 ---
