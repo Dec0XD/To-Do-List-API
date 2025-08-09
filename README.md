@@ -8,16 +8,16 @@
 <h1 align="center">To-Do Pro — API + Front-end moderno</h1>
 
 <p align="center">
-	Lista de tarefas full stack com autenticação JWT, filtros/ordenação e UI responsiva — pronta para portfolio e entrevistas.
+	Lista de tarefas full stack com autenticação JWT, filtros/ordenação e UI responsiva
   
 </p>
 
 <!-- Badges -->
 <p align="center">
-	<a href="https://github.com/Dec0XD/To-Do-List-API"><img src="https://img.shields.io/github/stars/Dec0XD/To-Do-List-API?style=for-the-badge" alt="Stars"/></a>
-	<a href="https://github.com/Dec0XD/To-Do-List-API/issues"><img src="https://img.shields.io/github/issues/Dec0XD/To-Do-List-API?style=for-the-badge" alt="Issues"/></a>
+	<a href="https://github.com/Dec0XD/To-Do-List-API"><img src="https://img.shields.io/badge/GitHub-Dec0XD%2FTo--Do--List--API-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+	<a href="https://github.com/Dec0XD/To-Do-List-API/issues"><img src="https://img.shields.io/badge/Issues-abrir_na_web-1f6feb?style=for-the-badge&logo=github" alt="Issues"/></a>
 	<a href="http://localhost:5173"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge" alt="Live Demo"/></a>
-	<a href="LICENSE"><img src="https://img.shields.io/github/license/Dec0XD/To-Do-List-API?style=for-the-badge" alt="License"/></a>
+ 	<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License: MIT"/></a>
 </p>
 
 ---
@@ -66,7 +66,9 @@ Projeto desenvolvido com:
 - ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 - ![Docker](https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white)
 - ![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)
-- Tailwind CSS, Vite, Lucide Icons
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge)
+- ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=Vite&logoColor=white&style=for-the-badge)
+- ![Lucide Icons](https://img.shields.io/badge/Lucide-Icones-lightgrey?style=for-the-badge)
 
 ---
 
