@@ -1,0 +1,44 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:6
+    container_name: todo-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  api:
+    build: ./todo-list-api
+    container_name: todo-api
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - '3000:3000'
+    env_file:
+      - ./todo-list-api/.env
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/todo-list
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./todo-list-web
+      args:
+        VITE_API_BASE: "http://localhost:3000/api"
+    container_name: todo-web
+    depends_on:
+      - api
+    ports:
+      - '5173:80'
+
+volumes:
+  mongo_data:
+    driver: local
