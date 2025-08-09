@@ -74,9 +74,21 @@ Projeto desenvolvido com:
 
 ## 🚀 Instalação
 
-Pré-requisitos: Docker e Docker Compose.
+Pré-requisitos: Docker e Docker Compose (para o fluxo com Docker) ou Node.js 20+ (para rodar sem Docker).
 
 1) Rodando com Docker (recomendado)
+
+Crie o arquivo de variáveis da API (JWT_SECRET) antes de subir:
+
+```powershell
+# Na raiz do repo
+New-Item -ItemType Directory -Force -Path .\todo-list-api | Out-Null
+@"
+JWT_SECRET=uma_senha_bem_forte
+"@ | Out-File -Encoding utf8 .\todo-list-api\.env
+```
+
+Suba os serviços:
 
 ```powershell
 git clone https://github.com/Dec0XD/To-Do-List-API.git
@@ -87,6 +99,10 @@ docker compose up --build -d
 # API: http://localhost:3000
 # Web: http://localhost:5173
 ```
+
+Notas:
+- O Mongo roda em um container separado e a API se conecta via `DATABASE_URL` já configurada no `docker-compose.yml` (mongodb://mongo:27017/todo-list).
+- O front-end já está configurado para falar com a API via proxy Nginx. Não é necessário definir `VITE_API_BASE` para desenvolvimento com Docker.
 
 Para parar:
 
@@ -101,6 +117,14 @@ API
 ```powershell
 cd todo-list-api
 npm install
+
+# Crie um arquivo .env
+@"
+JWT_SECRET=uma_senha_bem_forte
+MONGODB_URI=mongodb://localhost:27017/todo-list
+# PORT=3000 (opcional)
+"@ | Out-File -Encoding utf8 .\.env
+
 npm start
 # API em http://localhost:3000
 ```
@@ -110,6 +134,8 @@ Web
 ```powershell
 cd todo-list-web
 npm install
+
+# Não defina VITE_API_BASE: o Vite dev server já faz proxy de /api -> http://localhost:3000
 npm run dev
 # SPA em http://localhost:5173
 ```
