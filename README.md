@@ -180,7 +180,7 @@ Distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 ## 📬 Contato
 
 - Autor: Dec0XD
-- LinkedIn: atualize o link no topo do app (TopBar) para facilitar o contato
+- LinkedIn: https://www.linkedin.com/in/andré-coêlho
 - Repositório: https://github.com/Dec0XD/To-Do-List-API
 
 ---
