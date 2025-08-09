@@ -17,6 +17,12 @@ const priorityBadge = {
 export default function TaskCard({ task, onEdit, onDelete, onToggleComplete }) {
   const due = new Date(task.dueDate);
   const overdue = due.getTime() < Date.now() && task.status !== 'completed';
+  // Format date using UTC components to avoid timezone shifting the calendar day
+  const d = new Date(task.dueDate);
+  const y = d.getUTCFullYear();
+  const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(d.getUTCDate()).padStart(2, '0');
+  const dueDisplay = `${day}/${m}/${y}`;
 
   return (
     <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md">
@@ -37,7 +43,7 @@ export default function TaskCard({ task, onEdit, onDelete, onToggleComplete }) {
       <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div className="flex items-center gap-2 text-slate-500 dark:text-slate-300">
           <Clock size={16} />
-          <span>Prazo: {due.toLocaleDateString()}</span>
+          <span>Prazo: {dueDisplay}</span>
         </div>
         <div className="flex flex-wrap gap-2">
           <Button variant="secondary" onClick={() => onEdit(task)}>

@@ -39,19 +39,17 @@
 
 ## 📌 Sobre o Projeto
 
-Aplicação de To-Do completa, com API Node.js/Express/MongoDB e um front-end moderno em React + Tailwind (Vite). 
-Foco em boas práticas de arquitetura, DX, e experiência visual (animações leves, dark mode, ícones Lucide).
+Aplicação de To-Do completa, com API Node.js/Express/MongoDB e um front-end moderno em React + Tailwind (Vite).
+Foco em boas práticas de arquitetura, experiência do desenvolvedor (DX) e qualidade visual (animações leves, dark mode, ícones Lucide).
 
-**Problema que resolve:** Organização de tarefas pessoais/equipe com prioridade, status e prazo, facilitando a gestão do dia a dia.
-
-**Público-alvo:** Desenvolvedores(as) e recrutadores(as) que desejam avaliar habilidades full stack com uma base funcional e bem documentada.
+**Problema que resolve:** Organização de tarefas pessoais ou de equipe, com suporte a prioridade, status e prazo, otimizando o fluxo de trabalho.
 
 **Diferencial:**
-- Camadas claras (Controller/Service/Repository)
-- JWT com fluxo de mock login para testes rápidos
+- Camadas bem definidas (Controller / Service / Repository)
+- Autenticação JWT com fluxo de mock login para testes rápidos
 - Filtros (status/prioridade/prazo) e ordenação (prioridade/data)
-- Docker Compose para subir tudo com 1 comando
-- UI responsiva, moderna e acessível
+- Docker Compose para subir tudo com um único comando
+- Interface responsiva, moderna e acessível
 
 <p align="center">
 		<img src="github/ui-list.png" alt="Screenshot da lista de tarefas" width="85%"/>
@@ -150,15 +148,14 @@ Interface (exemplo):
 
 ## 🎯 Por que este projeto é relevante?
 
-Este repositório demonstra um fluxo full stack completo com foco em qualidade de código, separação de camadas e uma UI caprichada.
-É ideal para entrevistas, pois mostra:
+Este repositório demonstra um fluxo full stack completo com foco em qualidade de código, separação de camadas e uma UI funcional e refinada.
+
+Ele cobre pontos essenciais para aplicações reais:
 
 - Integração front-back com autenticação e estados assíncronos
-- Arquitetura clara (Controller/Service/Repository) e boas práticas
-- Design responsivo, acessibilidade e dark mode
-- Execução local frictionless via Docker Compose
-
-Além disso, o front já traz detalhes "portfolio-friendly": botões chamativos, animações discretas, ícones modernos e um atalho para LinkedIn (atualize a URL no componente `TopBar`).
+- Arquitetura clara e aplicável a projetos escaláveis
+- Design responsivo e acessível, incluindo dark mode
+- Configuração local simplificada via Docker Compose
 
 ---
 

@@ -17,7 +17,8 @@ export default function TaskForm({ onSubmit, editing, onCancel }) {
     if (editing) {
       setValues({
         ...editing,
-        dueDate: editing.dueDate ? new Date(editing.dueDate).toISOString().slice(0, 10) : '',
+  // Use UTC slice for input value to display the intended date regardless of timezone
+  dueDate: editing.dueDate ? new Date(editing.dueDate).toISOString().slice(0, 10) : '',
       });
     } else setValues(initial);
   }, [editing]);
@@ -29,7 +30,10 @@ export default function TaskForm({ onSubmit, editing, onCancel }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...values, dueDate: new Date(values.dueDate).toISOString() };
+  // Build a Date at local midnight to preserve the selected calendar day across timezones
+  const [y, m, d] = values.dueDate.split('-').map(Number);
+  const localMidnight = new Date(y, (m || 1) - 1, d || 1, 0, 0, 0, 0);
+  const payload = { ...values, dueDate: localMidnight.toISOString() };
     onSubmit(payload);
   };
 
