@@ -38,7 +38,7 @@ export default function useTasks() {
   const updateTask = async (id, payload) => {
     try {
       const { data } = await api.put(`/tasks/${id}`, payload);
-      setTasks((t) => t.map((i) => (i._id === id ? data : i)));
+      setTasks((t) => t.map((i) => (i.id === id ? data : i)));
       toast.success('Tarefa atualizada');
     } catch (e) {
       toast.error('Erro ao atualizar');
@@ -49,7 +49,7 @@ export default function useTasks() {
   const deleteTask = async (id) => {
     try {
       await api.delete(`/tasks/${id}`);
-      setTasks((t) => t.filter((i) => i._id !== id));
+      setTasks((t) => t.filter((i) => i.id !== id));
       toast.success('Tarefa removida');
     } catch (e) {
       toast.error('Erro ao remover');
