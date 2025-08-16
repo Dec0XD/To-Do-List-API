@@ -25,7 +25,7 @@ export default function TasksPage() {
 
   const onToggleComplete = (task) => {
     const next = task.status === 'completed' ? 'pending' : 'completed';
-    updateTask(task._id, { status: next });
+    updateTask(task.id, { status: next });
   };
 
   return (
@@ -77,7 +77,7 @@ export default function TasksPage() {
             </div>
           </div>
           <div className="mt-4">
-            <TaskForm onSubmit={(p) => (editing ? updateTask(editing._id, p).then(() => setEditing(null)) : createTask(p))} editing={editing} onCancel={() => setEditing(null)} />
+            <TaskForm onSubmit={(p) => (editing ? updateTask(editing.id, p).then(() => setEditing(null)) : createTask(p))} editing={editing} onCancel={() => setEditing(null)} />
           </div>
         </section>
 
@@ -89,7 +89,7 @@ export default function TasksPage() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {tasks.map((t) => (
-                <TaskCard key={t._id} task={t} onEdit={setEditing} onDelete={(task) => deleteTask(task._id)} onToggleComplete={onToggleComplete} />
+                <TaskCard key={t.id} task={t} onEdit={setEditing} onDelete={(task) => deleteTask(task.id)} onToggleComplete={onToggleComplete} />
               ))}
             </div>
           )}

@@ -4,24 +4,32 @@ class TaskRepository {
     }
 
     async createTask(taskData) {
-        const task = new this.TaskModel(taskData);
-        return await task.save();
+        return await this.TaskModel.create(taskData);
     }
 
     async getTasks(filter = {}) {
-        return await this.TaskModel.find(filter);
+        return await this.TaskModel.findAll({ where: filter });
     }
 
     async getTaskById(taskId) {
-        return await this.TaskModel.findById(taskId);
+        return await this.TaskModel.findByPk(taskId);
     }
 
     async updateTask(taskId, updateData) {
-        return await this.TaskModel.findByIdAndUpdate(taskId, updateData, { new: true });
+        const task = await this.TaskModel.findByPk(taskId);
+        if (!task) {
+            return null;
+        }
+        return await task.update(updateData);
     }
 
     async deleteTask(taskId) {
-        return await this.TaskModel.findByIdAndDelete(taskId);
+        const task = await this.TaskModel.findByPk(taskId);
+        if (!task) {
+            return null;
+        }
+        await task.destroy();
+        return task;
     }
 }
 
