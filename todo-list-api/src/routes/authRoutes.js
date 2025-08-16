@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Mock login: returns a token for a dummy user
 router.post('/mock-login', (req, res) => {
-  const user = { _id: 'test-user' };
+  const user = { id: 'test-user' };
   const token = generateToken(user);
   res.json({ token });
 });
